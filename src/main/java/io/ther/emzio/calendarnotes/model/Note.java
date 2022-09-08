@@ -14,7 +14,18 @@ public class Note {
     @NotBlank
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "picture_id")
+    private Picture picture;
     private String description;
+
+    public Picture getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Picture picture) {
+        this.picture = picture;
+    }
 
 //    private LocalDate date;
 
@@ -41,4 +52,5 @@ public class Note {
     public void setId(Long id) {
         this.id = id;
     }
+
 }
